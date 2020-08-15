@@ -7,24 +7,26 @@
     <link rel="icon" type="image" href="https://pngimg.com/uploads/mars_planet/mars_planet_PNG13.png">
     <title>Mission to Mars</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
+<!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
+<!--Text black, BG white-->
 <body class="text-black" style="background-color:white">
     <div class="container">
 
-        <!-- Jumbotron -->
+<!-- Jumbotron blue -->
         <div class="jumbotron text-center">
             <h1 class="display-4">Mission to Mars</h1>
             <a class="btn btn-lg text-white" style="background-color:hsl(204, 86%, 41%);" href="/scrape" role="button">Scrape New
                 Data</a>
         </div>
 
-        <!-- News Section -->
+<!-- News -->
         <div class="container">
             <h3>Latest Mars News</h3>
+<!--newsLead, newsB-->
             <h6 style="color: #c1440e">{{ marsData.newsLead }}</h6>
             <p>{{ marsData.newsB }}</p>
             <p>{{ marsNewsDate }}</p>
@@ -33,41 +35,43 @@
         <div class="container">
             <div class="row">
 
-        <!-- Left Image-->
+<!-- Featured Image-->
                 <div class="col-lg-8 col-md-8 col-sm-12">
                      <h3>Featured Mars Image</h3>
+<!--finalImageUrl-->
                         <img src="{{ marsData.finalImageUrl }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
                 </div>
             
-        <!-- Weather Card -->
+<!-- Weather-->
         <div class="col-lg-4 col-md-4 col-sm-12">
 
             <div class="card" style="width: 18rem;">
                 <div class="card-body text-white bg-dark">
                     <h6 class="card-title">Current Weather on Mars</h6>
+<!--weatherTweet-->
                     <p class="card-text">{{ marsData.weatherTweet }}</p>
                 </div>
 
             </div>    
                 
-
-        <!-- Table -->
+<!-- Facts -->
         <br>
             <h3>Mars Facts</h3>
                 <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
+<!--marsFacts-->
                     {{ marsData.marsFacts|safe}}
                 </div>
-            </div> <!-- col4 -->
-        </div><!-- Row -->
-    </div><!-- Container -->
+            </div>
+        </div>
+    </div>
 
-
-        <!-- Cards -->
+<!--Hemishere-->
         <h3 style="padding-top: 50px; margin-top: 100px; text-align: center;">Mars Hemispheres</h3>
         <div class="card-deck">
             <hr>
             <div class="col-md-12">
                 <div class="row">
+<!--imageUrls-->
                     {% for item in marsData.image_urls %}
                     <div class="col-md-6">
                         <div class="card text-white bg-dark" style="margin: 30px;">
@@ -80,10 +84,10 @@
                     {% endfor %}
                 </div>
             </div>
-        </div><!-- Close main container -->
+</div>
 
 
-        <!-- Bootstrap JS -->
+<!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
